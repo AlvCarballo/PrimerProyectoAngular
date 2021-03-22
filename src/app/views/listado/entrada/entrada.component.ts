@@ -1,4 +1,6 @@
+import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { Entrada } from 'src/app/shared/interaces/entrada';
 
 @Component({
   selector: 'app-entrada',
@@ -6,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./entrada.component.css']
 })
 export class EntradaComponent implements OnInit {
-
-  constructor() { }
+// Atributos
+@Input()
+public entrada: Entrada;
+  constructor() {
+    this.entrada = {
+      titulo: '',
+      resumen: ''
+    }
+  }
 
   ngOnInit(): void {
   }
